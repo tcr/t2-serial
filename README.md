@@ -2,9 +2,9 @@
 
 Opens a terminal into Tessel 2's serial port. Works cross platform.
 
-```
+```sh
 npm install -g t2-serial
-``
+```
 
 then:
 
@@ -12,8 +12,6 @@ then:
 $ t2-serial
 INFO Connecting to Tessel...
 Please press Enter to activate this console.
-
-
 
 
 BusyBox v1.23.2 (2016-09-02 15:27:43 EDT) built-in shell (ash)
