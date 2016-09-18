@@ -1,0 +1,19 @@
+{
+  "name": "t2-serial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/tcr/t2-shell",
+  "keywords": ["tessel", "shell", "serial"],
+  "bin": {
+    "t2-shell": "index.js"
+  },
+  "author": "Tim Ryan <tim@timryan.org>",
+  "license": "MIT",
+  "dependencies": {
+    "usb": "^1.2.0"
+  }
+}
