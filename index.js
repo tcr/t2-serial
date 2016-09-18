@@ -6,26 +6,12 @@ function libusb (device) {
   this.device = device;
   this.conn = {};
   // *shakes fist at OSX*
-  if (process.platform.toLowerCase() === 'darwin') {
-    fixOSX.call(this);
-  }
-
-  if (process.platform.toLowerCase() === 'win32') {
-    fixWin.call(this);
+  if (process.platform.toLowerCase() === 'darwin' || process.platform.toLowerCase() === 'win32') {
+    fixClaimInterface.call(this);
   }
 }
 
-function fixOSX() {
-  (function(self, __open) {
-    self.device.__open = function() {
-      __open.call(this);
-      // injecting this line here to alleviate a bad error later
-      this.__claimInterface(2);
-    };
-  })(this, this.device.__open);
-};
-
-function fixWin() {
+function fixClaimInterface() {
   (function(self, __open) {
     self.device.__open = function() {
       __open.call(this);
