@@ -1,5 +1,7 @@
 # t2-serial
 
+**TODO:** There's an issue on Windows! Working on fixing this!
+
 Opens a terminal into Tessel 2's serial port. Works cross platform.
 
 ```sh
