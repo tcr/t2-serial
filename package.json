@@ -1,6 +1,6 @@
 {
   "name": "t2-serial",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "repository": "https://github.com/tcr/t2-shell",
   "keywords": ["tessel", "shell", "serial"],
   "bin": {
-    "t2-shell": "index.js"
+    "t2-serial": "index.js"
   },
   "author": "Tim Ryan <tim@timryan.org>",
   "license": "MIT",

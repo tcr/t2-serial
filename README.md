@@ -1,15 +1,15 @@
-# t2-shell
+# t2-serial
 
 Opens a terminal into Tessel 2's serial port. Works cross platform.
 
 ```
-npm install -g t2-shell
+npm install -g t2-serial
 ``
 
 then:
 
-```shell
-$ t2-shell
+```sh
+$ t2-serial
 INFO Connecting to Tessel...
 Please press Enter to activate this console.
 
