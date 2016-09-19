@@ -6,12 +6,12 @@ function libusb (device) {
   this.device = device;
   this.conn = {};
   // *shakes fist at OSX*
-  if (process.platform.toLowerCase() === 'darwin') {
-    fixOSX.call(this);
+  if (process.platform.toLowerCase() === 'darwin' || process.platform.toLowerCase() === 'win32') {
+    fixClaimInterface.call(this);
   }
 }
 
-function fixOSX() {
+function fixClaimInterface() {
   (function(self, __open) {
     self.device.__open = function() {
       __open.call(this);
@@ -62,7 +62,8 @@ libusb.prototype.read = function (length, callback) {
 module.exports = libusb;
 
 console.log('INFO Connecting to Tessel... (Ctrl+D to exit)');
-var tessel = new libusb(usb.findByIds(0x1209, 0x7551))
+var devices = usb.findByIds(0x1209, 0x7551);
+var tessel = new libusb(devices);
 tessel.open();
 tessel.setUpInterface(function (err) {
   const readline = require('readline');
@@ -89,6 +90,7 @@ tessel.setUpInterface(function (err) {
     tessel.read(64*1024, function (err, data) {
       if (err) {
         console.log(err);
+        process.exit();
       }
       if (data) {
         process.stdout.write(data);
