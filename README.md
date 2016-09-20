@@ -1,8 +1,7 @@
 # t2-serial
 
-**TODO:** There's an issue on Windows! Working on fixing this!
-
-Opens a terminal into Tessel 2's serial port. Works cross platform.
+Directly opens a terminal into Tessel 2's serial port shell (over USB).
+Works on Windows, macOS, and Linux.
 
 ```sh
 npm install -g t2-serial
